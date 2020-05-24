@@ -20,7 +20,7 @@ namespace BlazorApp
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5001/") });
             builder.Services.AddBlazorStyled();
-
+            
             await builder.Build().RunAsync();
         }
     }

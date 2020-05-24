@@ -1,0 +1,26 @@
+﻿<Styled @bind-Classname="@container">
+    font-size: 12px;
+    display: flex;
+    width: 100px;
+</Styled>
+<Styled @bind-Classname="@modifier">
+    text-align: center;
+    width: 20px;
+</Styled>
+
+<div class="@container">
+    <input type="checkbox" @onchange="() => Checked = !Checked" />
+    <div class="@modifier">@(Value + (Checked ? Proficiency : 0))</div>
+    <div>@Title</div>
+</div>
+
+@code {
+    private string container;
+    private string modifier;
+
+    private bool Checked = false;
+
+    [Parameter] public int Value { get; set; }
+    [Parameter] public int Proficiency { get; set; }
+    [Parameter] public string Title { get; set; }
+}

@@ -1,0 +1,72 @@
+﻿<Styled @bind-Classname="@container">
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+</Styled>
+<Styled @bind-Classname="@score">
+    border: 1px solid black;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    background-color: HotPink;
+</Styled>
+<Styled @bind-Classname="@modifier">
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 8px;
+</Styled>
+<Styled @bind-Classname="@thing">
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    bottom: 10px;
+    width: 45px;
+    height: 15px;
+    background-color: HotPink;
+    border: 1px solid black;
+</Styled>
+<Styled @bind-Classname="@title">
+    font-size: 14px;
+</Styled>
+
+<div class="@container">
+    <span class="@title" @onclick="Increment">@Title</span>
+    <div class="@modifier">
+        @(Score / 2 - 5)
+    </div>
+    <div class="@thing">
+        <span @onclick="Decrement">-</span>
+        <div class="@score">
+            <span>@Score</span>
+        </div>
+        <span @onclick="Increment">+</span>
+    </div>
+</div>
+
+@code {
+    private string container;
+    private string score;
+    private string modifier;
+    private string title;
+    private string thing;
+
+    private int Score = 10;
+
+    private void Increment()
+    {
+        Score++;
+    }
+
+    private void Decrement()
+    {
+        Score--;
+    }
+
+    [Parameter] public string Title { get; set; }
+}

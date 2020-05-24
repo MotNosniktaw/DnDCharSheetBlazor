@@ -1,0 +1,16 @@
+﻿<Styled @bind-Classname="@container">
+    width: 100%;
+    border: 1px solid red;
+    flex: 1;
+    display: flex;
+</Styled>
+
+<div class="@container">
+    @ChildContent
+</div>
+
+@code {
+    private string container;
+
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

@@ -1,0 +1,30 @@
+﻿<Styled @bind-Classname="@container">
+    border: 1px solid black;
+</Styled>
+<Styled @bind-Classname="@savingThrow">
+
+</Styled>
+
+<div class="@container">
+    <SavingThrow Title="Strength" Value="@Strength" Proficiency="@Proficiency" />
+    <SavingThrow Title="Dexterity" Value="@Dexterity" Proficiency="@Proficiency"  />
+    <SavingThrow Title="Constitution" Value="@Constitution" Proficiency="@Proficiency"  />
+    <SavingThrow Title="Intelligence" Value="@Intelligence" Proficiency="@Proficiency"  />
+    <SavingThrow Title="Wisdom" Value="@Wisdom" Proficiency="@Proficiency"  />
+    <SavingThrow Title="Charisma" Value="@Charisma" Proficiency="@Proficiency"  />
+    <span>Saving Throws</span>
+</div>
+
+@code {
+    private string container;
+    private string savingThrow;
+
+    private int Proficiency = 2;
+
+    private int Strength = +3;
+    private int Dexterity = 0;
+    private int Constitution = +2;
+    private int Intelligence = -1;
+    private int Wisdom = 0;
+    private int Charisma = +4;
+}

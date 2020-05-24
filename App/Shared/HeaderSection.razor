@@ -1,0 +1,15 @@
+﻿<Styled @bind-Classname="@container">
+    width: 100%;
+    height: 100px;
+    background-color: purple;
+</Styled>
+
+<div class="@container">
+    @ChildContent
+</div>
+
+@code {
+    private string container;
+
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}
